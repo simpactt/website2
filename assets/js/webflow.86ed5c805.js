@@ -2637,9 +2637,9 @@ Webflow.define('forms', module.exports = function ($, _) {
     // formUrl = "https://webflow.com" + '/api/v1/form/' + siteId; // Work around same-protocol IE XDR limitation - without this IE9 and below forms won't submit
     formUrl = "https://script.google.com/macros/s/AKfycbzlMVzy7XxCZ6bcyd4BZtPoGjILQ4dJv7uXYpyQ1OZqAigGkXiN5TOvI7Q1mTPzwvui_w/exec";
 
-    if (retro && formUrl.indexOf("https://webflow.com") >= 0) {
-      formUrl = formUrl.replace("https://webflow.com", "http://formdata.webflow.com");
-    }
+    // if (retro && formUrl.indexOf("https://webflow.com") >= 0) {
+    //   formUrl = formUrl.replace("https://webflow.com", "http://formdata.webflow.com");
+    // }
 
     signFileUrl = "".concat(formUrl, "/signFile");
     $forms = $(namespace + ' form');
@@ -2894,12 +2894,18 @@ Webflow.define('forms', module.exports = function ($, _) {
       dataType: 'json',
       crossDomain: true
     }).done(function (response) {
+      
+      console.log("done");
+      console.log("response " + response);
+      console.log("response.code " + response.code);
+      
       if (response && response.code === 200) {
         data.success = true;
       }
 
       afterSubmit(data);
     }).fail(function () {
+      console.log("fail");
       afterSubmit(data);
     });
   }
