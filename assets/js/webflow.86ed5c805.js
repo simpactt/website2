@@ -2896,20 +2896,20 @@ Webflow.define('forms', module.exports = function ($, _) {
       crossDomain: true
     }).done(function (response) {
       
-      console.log("done 2, response " + JSON.stringify(response));
+      // console.log("done 2, response " + JSON.stringify(response));
       
       // if (response && response.code === 200) {
       if (response && response["result"] === "success") {
-        console.log("success");
+        // console.log("success");
         data.success = true;
       } else {
-        console.log("not success");
+        // console.log("not success");
       }
 
       afterSubmit(data);
     }).fail(function () {
 
-      console.log("fail");
+      // console.log("fail");
 
       afterSubmit(data);
     });
