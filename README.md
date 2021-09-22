@@ -1,1 +1,2 @@
-# website2
+
+This second-generation Simpact website was created in Webflow.
