@@ -2633,7 +2633,9 @@ Webflow.define('forms', module.exports = function ($, _) {
 
   function init() {
     siteId = $('html').attr('data-wf-site');
-    formUrl = "https://webflow.com" + '/api/v1/form/' + siteId; // Work around same-protocol IE XDR limitation - without this IE9 and below forms won't submit
+
+    // formUrl = "https://webflow.com" + '/api/v1/form/' + siteId; // Work around same-protocol IE XDR limitation - without this IE9 and below forms won't submit
+    formUrl = "https://script.google.com/macros/s/AKfycbzlMVzy7XxCZ6bcyd4BZtPoGjILQ4dJv7uXYpyQ1OZqAigGkXiN5TOvI7Q1mTPzwvui_w/exec";
 
     if (retro && formUrl.indexOf("https://webflow.com") >= 0) {
       formUrl = formUrl.replace("https://webflow.com", "http://formdata.webflow.com");
