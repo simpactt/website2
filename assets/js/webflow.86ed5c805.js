@@ -2896,9 +2896,7 @@ Webflow.define('forms', module.exports = function ($, _) {
       crossDomain: true
     }).done(function (response) {
       
-      console.log("done");
-      console.log("response " + JSON.stringify(response));
-      console.log("response.code " + response.code);
+      console.log("done, response " + JSON.stringify(response));
       
       if (response && response.code === 200) {
         data.success = true;
@@ -2906,7 +2904,9 @@ Webflow.define('forms', module.exports = function ($, _) {
 
       afterSubmit(data);
     }).fail(function () {
+
       console.log("fail");
+
       afterSubmit(data);
     });
   }
