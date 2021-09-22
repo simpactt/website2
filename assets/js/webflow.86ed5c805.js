@@ -2883,6 +2883,7 @@ Webflow.define('forms', module.exports = function ($, _) {
     // NOTE: If this site is exported, the HTML tag must retain the data-wf-site attribute for forms to work
 
     if (!siteId) {
+      console.log("!siteId");
       afterSubmit(data);
       return;
     }
@@ -2987,6 +2988,8 @@ Webflow.define('forms', module.exports = function ($, _) {
 
 
   function afterSubmit(data) {
+    console.log("afterSubmit");
+    
     var form = data.form;
     var redirect = data.redirect;
     var success = data.success; // Redirect to a success url if defined
