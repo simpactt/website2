@@ -2897,7 +2897,7 @@ Webflow.define('forms', module.exports = function ($, _) {
     }).done(function (response) {
       
       console.log("done");
-      console.log("response " + response);
+      console.log("response " + JSON.stringify(response));
       console.log("response.code " + response.code);
       
       if (response && response.code === 200) {
@@ -2989,7 +2989,7 @@ Webflow.define('forms', module.exports = function ($, _) {
 
   function afterSubmit(data) {
     console.log("afterSubmit");
-    
+
     var form = data.form;
     var redirect = data.redirect;
     var success = data.success; // Redirect to a success url if defined
